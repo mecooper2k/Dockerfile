@@ -1,0 +1,18 @@
+version: 0.2
+
+#env:
+#  variables:
+#      AWS_DEFAULT_REGION: "eu-central-1"
+#      AWS_ACCOUNT_ID: "831496480262"
+#      IMAGE_REPO_NAME: "container_imgfactory_ubuntu1604_linux"
+#      IMAGE_TAG: "latest"
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+    commands:
+      - apt-get update -qq
+      - pip3 install  awscli boto3
+  build:
+    commands:
+      - docker build -t saran07/ubuntu1604 $CODEBUILD_SRC_DIR/ubuntu/
