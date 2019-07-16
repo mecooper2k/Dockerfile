@@ -15,4 +15,8 @@ phases:
       - pip3 install  awscli boto3
   build:
     commands:
+      - tree
+      - cd $CODEBUILD_SRC_DIR/ubuntu/
+      - ls -al
+      - cd
       - docker build -t saran07/ubuntu1604 $CODEBUILD_SRC_DIR/ubuntu/
