@@ -15,7 +15,7 @@ phases:
       - pip3 install  awscli boto3
   build:
     commands:
-      - sudo apt-get install tree -y
+      - apt-get install tree -y
       - tree
       - cd $CODEBUILD_SRC_DIR/ubuntu/
       - ls -al
