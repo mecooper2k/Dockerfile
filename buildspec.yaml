@@ -16,6 +16,7 @@ phases:
   build:
     commands:
       - apt-get install tree -y
+      - printenv
       - tree
       - cd $CODEBUILD_SRC_DIR/ubuntu/
       - ls -al
